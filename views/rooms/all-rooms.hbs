@@ -1,0 +1,45 @@
+<div class='container has-text-centered'>
+	<h1 class='title is-1 is-centered'>List of all rooms</h1>
+</div>
+
+<div class='container'>
+	<div class='section'>
+		<div id='app' class='row columns is-multiline'>
+
+			{{#each allRooms}}
+				<div class='column is-4'>
+					<div class='card large'>
+						<div class='card-image'>
+							<figure class='image is-16by9'>
+								<a href='/rooms/{{_id}}'>
+									<img src={{imageUrl}} alt={{name}} />
+								</a>
+							</figure>
+						</div>
+						<div class='card-content'>
+							<div class='media'>
+								<div class='media-content'>
+									<p class='title is-4 no-padding'>{{name}}</p>
+									<p class='subtitle is-6'>{{description}}</p>
+									<p>
+										<span class='title is-6'>
+											<a href='/rooms/{{_id}}'> See more </a>
+										</span>
+									</p>
+								</div>
+							</div>
+							<div class='content'>
+								Owner:
+								{{owner.username}}
+								<div class='background-icon'><span
+										class='icon-twitter'
+									></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			{{/each}}
+		</div>
+	</div>
+</div>
